@@ -1,0 +1,52 @@
+<!DOCTYPE html> <html> <head> <title>GourmetHub - Backend Dashboard</title>
+  <style> body { font-family: monospace; margin: 0; padding: 20px; } .container
+  { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; } .card { border:
+  1px solid #ccc; padding: 15px; border-radius: 5px; } table { width: 100%;
+  border-collapse: collapse; } th, td { border: 1px solid #ddd; padding: 8px;
+  text-align: left; } .metrics { display: grid; grid-template-columns: repeat(4,
+  1fr); gap: 10px; } .metric-card { background: #f5f5f5; padding: 10px;
+  text-align: center; } </style> </head> <body> <h1>📈 GourmetHub System
+    Metrics</h1>
+
+    <div class="metrics"> <div class="metric-card"> <div class="value"
+      id="order-rate">0</div> <div class="label">Orders/min</div> </div> <div
+        class="metric-card"> <div class="value" id="avg-prep-time">0s</div> <div
+          class="label">Avg Prep Time</div> </div> <div class="metric-card">
+        <div class="value" id="reservation-rate">0</div> <div
+          class="label">Reservations/min</div> </div> <div class="metric-card">
+        <div class="value" id="error-rate">0%</div> <div class="label">Error
+          Rate</div> </div> </div>
+
+    <div class="container"> <div class="card"> <h2>🚚 Active Orders</h2> <table
+      id="orders-table"> <thead> <tr> <th>ID</th> <th>Items</th> <th>Status</th>
+        <th>Elapsed</th> </tr> </thead> <tbody>
+        <!-- JS will populate -->
+      </tbody> </table> </div>
+
+      <div class="card"> <h2>🪑 Active Reservations</h2> <table
+        id="reservations-table"> <thead> <tr> <th>ID</th> <th>Name</th>
+          <th>People</th> <th>Wait Time</th> </tr> </thead> <tbody>
+          <!-- JS will populate -->
+        </tbody> </table> </div> </div>
+
+    <script> // Simulación de conexión a WebSockets o Server-Sent Events
+    setInterval(async () => { const response = await fetch('/api/metrics');
+    const data = await response.json();
+
+    // Actualizar métricas document.getElementById('order-rate').textContent =
+    data.orders_per_min; document.getElementById('avg-prep-time').textContent =
+    `${data.avg_prep_time}s`;
+    document.getElementById('reservation-rate').textContent =
+    data.reservations_per_min; document.getElementById('error-rate').textContent
+    = `${data.error_rate}%`;
+
+    // Actualizar tablas updateTable('orders-table', data.active_orders);
+    updateTable('reservations-table', data.active_reservations); }, 2000);
+
+    function updateTable(tableId, items) { const table =
+    document.getElementById(tableId); const tbody =
+    table.querySelector('tbody'); tbody.innerHTML = '';
+
+    items.forEach(item => { const row = document.createElement('tr');
+    row.innerHTML = Object.values(item).map(val => `<td>${val}</td>`).join('');
+    tbody.appendChild(row); }); } </script> </body> </html>
