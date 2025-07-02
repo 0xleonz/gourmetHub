@@ -5,3 +5,9 @@ lol
 todo.md
 documentacion
 
+*.lock
+testing/services
+**/**Makefile
+/back/.venv
+**/**/__pycache__
+**/**/uv.lock

@@ -21,4 +21,5 @@ graph LR
     E --> G[Dashboard]
     H[Simulator] --> B
 ```
-El api gateway implementa un reverse proxy,
+
+<!-- El api gateway implementa un reverse proxy, -->
