@@ -11,3 +11,4 @@ testing/services
 /back/.venv
 **/**/__pycache__
 **/**/uv.lock
+/dashboard/package-lock.json
