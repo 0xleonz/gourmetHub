@@ -4,10 +4,10 @@
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Docker](https://img.shields.io/badge/Docker-Containers-blue)
 ![Microservicios](https://img.shields.io/badge/Architecture-Microservices-green)
-![Apache rabbitMQ](https://img.shields.io/badge/Apache_rabbitMQ-Streaming-orange)
+![RabbitMQ](https://img.shields.io/badge/Apache_rabbitMQ-Streaming-orange)
 
 **GourmetHub** es un sistema de gestión de restaurante basado en microservicios
-que procesa órdenes y reservaciones en tiempo real usando Apache rabbitMQ. Diseñado
+que procesa órdenes y reservaciones en tiempo real usando RabbitMQ. Diseñado
 para alta escalabilidad y seguimiento de métricas de desempeño.
 
 ```mermaid
