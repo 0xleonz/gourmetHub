@@ -10,6 +10,7 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 que procesa órdenes y reservaciones en tiempo real usando RabbitMQ. Diseñado
 para alta escalabilidad y seguimiento de métricas de desempeño.
 
+```mermaid
 graph LR
     A[Cliente] --> C[Order Service]
     A[Cliente] --> D[Reservation Service]
@@ -19,5 +20,7 @@ graph LR
     E --> G[Dashboard]
     H[Simulator] --> C
     H[Simulator] --> D
+
+```
 
 <!-- El api gateway implementa un reverse proxy, -->

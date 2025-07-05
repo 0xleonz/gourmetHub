@@ -22,7 +22,7 @@ func main() {
 		w.Write([]byte("OK"))
 	})
 
-	log.Println("🚀 API Gateway iniciado en :8080")
+	log.Println(" running:8080")
 	http.ListenAndServe(":8080", nil)
 }
 
